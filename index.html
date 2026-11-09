@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StreetConnect helps Indian street vendors register, reach customers and access support.">
+  <title>StreetConnect | Empowering Street Vendors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="StreetConnect home">
+        <span class="brand-mark">SC</span>
+        <span>Street<span class="brand-green">Connect</span><small>Digital support for local business</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+      <nav id="mainNav">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#vendors">Find Vendors</a>
+        <a href="#register">Vendor Registration</a><a href="#support">Support</a>
+        <button class="nav-login" id="loginNav">Login / Dashboard</button>
+        <select id="languageSelect" aria-label="Choose language"><option value="en">English</option><option value="kn">ಕನ್ನಡ</option></select>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> LOCAL BUSINESSES. BIGGER POSSIBILITIES.</span>
+          <h1>Empowering Street Vendors <span>Digitally.</span></h1>
+          <p>One simple platform to register your business, connect with nearby customers and discover support opportunities.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="#register">Register as Vendor <span>→</span></a><a class="btn btn-outline" href="#vendors">Explore Vendors</a></div>
+          <div class="trust-note"><span class="trust-icon">✓</span> Easy registration &nbsp; · &nbsp; Local discovery &nbsp; · &nbsp; Digital identity</div>
+        </div>
+        <div class="hero-art">
+          <div class="hero-photo"><img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1000&q=85" alt="Colourful local market stalls"></div>
+          <div class="floating-card"><span class="float-icon">✦</span><div><strong>Local talent,</strong><small>within your reach</small></div></div>
+          <div class="hero-stamp">SUPPORT<br>LOCAL <span>♥</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="container stats-grid">
+        <div class="stat"><strong id="statVendors">128+</strong><span>Registered vendors</span></div>
+        <div class="stat"><strong id="statActive">96+</strong><span>Active businesses</span></div>
+        <div class="stat"><strong>5,000+</strong><span>Customers reached</span></div>
+        <p class="demo-note">Illustrative demo statistics</p>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">ABOUT STREETCONNECT</span><h2>Small businesses deserve <span>big opportunities.</span></h2><p>StreetConnect brings street vendors and customers closer through a simple digital platform.</p></div>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="feature-icon green">▣</div><h3>Digital registration</h3><p>Create a digital vendor profile and receive a demo registration ID.</p></article>
+          <article class="feature-card"><div class="feature-icon orange">⌕</div><h3>Be discovered</h3><p>Help customers find local stalls by business category and location.</p></article>
+          <article class="feature-card"><div class="feature-icon yellow">♧</div><h3>Access support</h3><p>Explore helpful information about registration and government schemes.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section vendors-section" id="vendors">
+      <div class="container">
+        <div class="section-heading row-heading"><div><span class="eyebrow">DISCOVER YOUR NEIGHBOURHOOD</span><h2>Meet local vendors</h2><p>Find the people and businesses that make your community special.</p></div><span class="live-pill">● Demo directory</span></div>
+        <div class="vendor-tools">
+          <input id="vendorSearch" type="search" placeholder="Search vendor, shop or location..." aria-label="Search vendors">
+          <select id="categoryFilter" aria-label="Filter by category"><option value="all">All categories</option><option>Food</option><option>Vegetables</option><option>Fruits</option><option>Clothing</option><option>Flowers</option><option>Other</option></select>
+        </div>
+        <div id="vendorGrid" class="vendor-grid"></div>
+        <p id="noVendors" class="empty-state hidden">No vendors match your search. Try another name or category.</p>
+        <div class="map-panel"><div class="map-copy"><span class="eyebrow">FIND LOCAL BUSINESSES</span><h3>Your neighbourhood, connected.</h3><p>This demo uses vendor address details. A live interactive map can be connected in a future version.</p></div><div class="map-visual"><span class="map-pin">📍</span><strong>Local vendor locations</strong><small>Location preview · Demo only</small></div></div>
+      </div>
+    </section>
+
+    <section class="section register-section" id="register">
+      <div class="container register-layout">
+        <div class="register-copy"><span class="eyebrow">JOIN STREETCONNECT</span><h2>Take your business <span>online.</span></h2><p>Register your stall to create a digital profile that helps customers discover your business.</p><ul class="check-list"><li>✓ Simple registration form</li><li>✓ Digital vendor ID</li><li>✓ Manage products and availability</li><li>✓ Reach more local customers</li></ul><div class="notice">This is a student demonstration project. Registration here does not constitute official municipal registration or a government certificate.</div></div>
+        <form id="registrationForm" class="form-card">
+          <h3>Vendor registration</h3><p class="form-subtitle">Enter your business details below.</p>
+          <div class="form-grid">
+            <label>Vendor name *<input name="name" required minlength="2" placeholder="Your full name"></label>
+            <label>Mobile number *<input name="phone" required inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit mobile number"></label>
+            <label>Email address<input name="email" type="email" placeholder="you@example.com"></label>
+            <label>Business / stall name *<input name="business" required placeholder="Your shop name"></label>
+            <label>Business category *<select name="category" required><option value="">Select category</option><option>Food</option><option>Vegetables</option><option>Fruits</option><option>Clothing</option><option>Flowers</option><option>Other</option></select></label>
+            <label>City *<input name="city" required placeholder="e.g. Bengaluru"></label>
+            <label class="full">Stall address *<textarea name="address" required rows="2" placeholder="Street, area, landmark"></textarea></label>
+            <label>PIN code *<input name="pin" required inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="6-digit PIN code"></label>
+            <label>Vendor / stall photo<input name="photo" type="file" accept="image/*"></label>
+          </div>
+          <button class="btn btn-primary btn-full" type="submit">Submit registration →</button>
+          <p id="registrationMessage" class="form-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section dashboard-section" id="dashboard">
+      <div class="container">
+        <div class="section-heading row-heading"><div><span class="eyebrow">YOUR WORKSPACE</span><h2>Vendor dashboard</h2><p>Demo dashboard for managing a registered vendor profile.</p></div><span class="status pending" id="dashboardStatus">Pending review</span></div>
+        <div class="dashboard-grid">
+          <div class="dash-card profile-card"><h3>Vendor profile</h3><div id="profileContent"><p class="muted">Register a vendor first, then select your profile here.</p></div><button class="btn btn-outline btn-small" id="loadLatest">Load latest registration</button></div>
+          <div class="dash-card"><h3>Products & prices</h3><form id="productForm" class="inline-form"><input id="productName" required placeholder="Product name"><input id="productPrice" type="number" min="0" step="0.5" required placeholder="Price ₹"><button class="btn btn-primary btn-small">Add</button></form><div id="productList" class="product-list"><p class="muted">No products added yet.</p></div></div>
+          <div class="dash-card"><h3>Business availability</h3><p class="muted">Let customers know if your stall is open.</p><label class="availability-toggle"><input id="availabilityToggle" type="checkbox" checked> <span>Available for customers</span></label><p id="availabilityText" class="success-text">Your business is marked available.</p></div>
+          <div class="dash-card qr-card"><h3>Digital vendor QR</h3><p class="muted">A demo QR code for your vendor profile.</p><div id="qrContainer" class="qr-placeholder">QR appears after registration</div><small class="muted">Demo QR uses an online QR image service.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section admin-section" id="admin">
+      <div class="container">
+        <div class="section-heading row-heading"><div><span class="eyebrow">DEMO ADMIN AREA</span><h2>Application management</h2><p>Review sample registrations and simulate an approval decision.</p></div><span class="admin-label">Simulation only</span></div>
+        <div class="admin-stats"><div><strong id="adminTotal">0</strong><span>Total applications</span></div><div><strong id="adminPending">0</strong><span>Pending</span></div><div><strong id="adminApproved">0</strong><span>Approved</span></div><div><strong id="adminRejected">0</strong><span>Rejected</span></div></div>
+        <div class="table-tools"><input id="adminSearch" type="search" placeholder="Search vendor or ID"><select id="adminFilter"><option value="all">All statuses</option><option>Pending</option><option>Approved</option><option>Rejected</option></select></div>
+        <div class="table-wrap"><table><thead><tr><th>Vendor ID</th><th>Vendor / Business</th><th>Category</th><th>Location</th><th>Status</th><th>Demo actions</th></tr></thead><tbody id="adminTable"></tbody></table></div>
+        <p class="muted tiny">Admin actions only change this browser's local demo data. They do not contact a municipality.</p>
+      </div>
+    </section>
+
+    <section class="section support-section" id="support">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">HELP & INFORMATION</span><h2>Support for your next step</h2><p>Explore general information and send a demo support request.</p></div>
+        <div class="support-grid">
+          <article class="support-card"><div class="support-icon">🏛️</div><h3>Municipal registration</h3><p>Street vending permissions and certificates are handled by the relevant local authority. Requirements and processes can vary by city.</p><a href="https://bbmp.gov.in/" target="_blank" rel="noopener">BBMP official website ↗</a></article>
+          <article class="support-card"><div class="support-icon">🤝</div><h3>PM SVANidhi</h3><p>PM SVANidhi is a Government of India scheme that supports eligible street vendors through working-capital loans and related benefits. Check current eligibility and terms on the official portal.</p><a href="https://pmsvanidhi.mohua.gov.in/" target="_blank" rel="noopener">PM SVANidhi portal ↗</a></article>
+          <article class="support-card"><div class="support-icon">📋</div><h3>Helpful resources</h3><p>Use official government websites for the latest notices, eligibility rules and application information.</p><a href="https://mohua.gov.in/" target="_blank" rel="noopener">Ministry of Housing and Urban Affairs ↗</a></article>
+        </div>
+        <div class="support-bottom">
+          <div class="faq-card"><h3>Frequently asked questions</h3>
+            <details><summary>Is StreetConnect an official government portal?</summary><p>No. It is a student demo project and is not affiliated with a municipal authority or government department.</p></details>
+            <details><summary>Does registration here give me a vending certificate?</summary><p>No. This form only creates a local demo profile. Contact your local authority for official registration.</p></details>
+            <details><summary>Where can I check PM SVANidhi details?</summary><p>Visit the official PM SVANidhi portal linked above for current information and eligibility.</p></details>
+          </div>
+          <form id="supportForm" class="form-card support-form"><h3>Send a support request</h3><label>Your name<input name="name" required placeholder="Your name"></label><label>Mobile / email<input name="contact" required placeholder="How can we reach you?"></label><label>How can we help?<select name="topic"><option>Registration help</option><option>Profile update</option><option>Technical issue</option><option>Other</option></select></label><label>Message<textarea name="message" rows="3" required placeholder="Describe your issue"></textarea></label><button class="btn btn-primary btn-full">Submit request</button><p id="supportMessage" class="form-message" aria-live="polite"></p></form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reviews-section" id="reviews"><div class="container review-banner"><div><span class="eyebrow">COMMUNITY VOICES</span><h2>Support local. Share your experience.</h2><p>Customer ratings and reviews can help local businesses grow. This demo review form stores feedback in your browser.</p></div><form id="reviewForm" class="review-form"><input name="vendor" required placeholder="Vendor / shop name"><select name="rating"><option value="5">★★★★★ - Excellent</option><option value="4">★★★★ - Very good</option><option value="3">★★★ - Good</option><option value="2">★★ - Fair</option><option value="1">★ - Needs improvement</option></select><textarea name="review" required rows="2" placeholder="Write a short review"></textarea><button class="btn btn-light">Submit review</button><p id="reviewMessage" class="form-message"></p></form></div></section>
+  </main>
+
+  <footer class="footer"><div class="container footer-inner"><a class="brand footer-brand" href="#home"><span class="brand-mark">SC</span><span>Street<span class="brand-green">Connect</span><small>Empowering local livelihoods</small></span></a><p>© 2026 StreetConnect · Student demonstration project</p><a href="#home">Back to top ↑</a></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
